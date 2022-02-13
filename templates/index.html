@@ -1,0 +1,24 @@
+{{define "index"}}
+{{template "header"}}
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Новостной блог</h1>
+        <p class="lead">Главные новости дня</p>
+        {{ range . }}
+            <div class = "alert alert-dark">
+                <h2>{{.Text}}</h2>
+                <p>{{.Anous}}</p>
+                <p class="text-right">{{.Now}}</p>
+                <blockquote class="blockquote text-right">
+                    <footer class="blockquote-footer"><cite title="Source Title">{{.Username}}</cite></footer>
+                </blockquote>
+                <a href="/post/{{.ID}}" class="btn btn-danger"> Читать далее </a>
+            </div>
+            {{else}}
+                <p class="lead">Пока статей нет!</p>
+            {{end}}
+        <p class="lead">
+            <a href="/blog/" class="btn btn-lg btn-secondary">Продолжить</a>
+        </p>
+    </main>
+    {{template "footer"}}
+{{end}}

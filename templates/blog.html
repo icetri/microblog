@@ -1,0 +1,18 @@
+{{define "blog"}}
+{{template "header"}}
+
+<main role="main" class="inner cover">
+  <h1 class="cover-heading">Форма добавления статьи</h1>
+  <form action="/saveparamsforblog/" method="POST">
+  <input type="text" name="title" id="title" placeholder="Введите название оглавления" class="form-control"><br>
+  <textarea name="anons" id="anons" class="form-control" placeholder="Краткое описание статьи"></textarea><br>
+  <textarea name="full_text" id="full_text" class="form-control" placeholder="Введите текст статьи"></textarea><br>
+      <textarea name="username" id="username" class="form-control" placeholder="Автор статьи"></textarea><br>
+  <p class="lead">
+            <button class="btn btn-warning">Отправить</button>
+        </p>
+  </form>
+</main>
+
+{{template "footer"}}
+{{end}}
